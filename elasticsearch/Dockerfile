@@ -7,4 +7,4 @@ RUN curl -Ls -o /tmp/elasticsearch-2.1.1.deb https://download.elasticsearch.org/
 
 EXPOSE 9200
 
-ENTRYPOINT ["/usr/bin/elasticsearch"]
+CMD ["/usr/bin/elasticsearch"]
