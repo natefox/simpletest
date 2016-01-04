@@ -7,8 +7,8 @@ MAINTAINER Nate Fox nfox@corpinfo.com
 RUN apt-get update && apt-get -y install nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
-ADD index.html /usr/share/nginx/html/index.html
-
 EXPOSE 80
+
+ADD index.html /usr/share/nginx/html/index.html
 
 CMD ["nginx"]
