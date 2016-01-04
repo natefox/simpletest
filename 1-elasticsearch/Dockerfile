@@ -1,4 +1,5 @@
-FROM ubuntu:14.04
+#FROM ubuntu:14.04
+FROM debian:jessie
 MAINTAINER Nate Fox nfox@corpinfo.com
 
 RUN apt-get update && apt-get install -y openjdk-7-jre-headless curl
@@ -16,4 +17,5 @@ RUN useradd elasticsearch
 RUN chown elasticsearch:elasticsearch /data/elasticsearch/ -R
 EXPOSE 9200
 
-CMD ["sudo","-u","elasticsearch","/data/elasticsearch/bin/elasticsearch"]
+USER elasticsearch
+CMD ["/data/elasticsearch/bin/elasticsearch"]
